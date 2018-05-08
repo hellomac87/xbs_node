@@ -29,13 +29,15 @@ router.get('/view', (req, res) => {
 
 });
 router.get('/form', (req, res) => {
-    res.render('form');
+    res.render('form',{result:""});
 });
+
+// Create
 router.post('/form', upload.single('thumbnail'), (req, res) => {
     let News = new NewsModel({
         title : req.body.title,
         thumbnail : (req.file) ? req.file.filename : "",
-        link : req.body.link,
+        a_link : req.body.a_link,
         description : req.body.description
     });
     News.save(function(err){
@@ -44,10 +46,43 @@ router.post('/form', upload.single('thumbnail'), (req, res) => {
 
 });
 
+// Read
+router.get('/view/:id',(req, res) =>{
+    NewsModel.findOne({ id : req.params.id },function(err, result){
+        res.render('detail',{result:result});
+    });
+});
+
+// Update
+router.get('/update/:id', (req, res) => {
+    NewsModel.findOne({ id : req.params.id}, function(err, result){
+        res.render('form',{result:result});
+    });
+});
+
+router.post('/update/:id', upload.single('thumbnail'),(req, res) => {
+    NewsModel.findOne({ id : req.params.id}, function(err, result){
+        if(req.file){ // 요청중에 파일이 존재할 시 이전 이미지를 지운다
+            fs.unlinkSync(uploadDir + '/' + result.thumbnail);
+        }
+
+        var query = {
+            title : req.body.title,
+            thumbnail : (req.file) ? req.file.filename : result.thumbnail,
+            a_link : req.body.a_link,
+            description : req.body.description
+        };
+
+        NewsModel.update({ id : req.params.id }, { $set : query }, function(err){
+            res.redirect('/regist/view/' + req.params.id );
+        });
+    });
+});
+
+// Delete
 router.get('/delete/:id',(req, res) =>{
     NewsModel.remove({ id : req.params.id },function(err){
         res.redirect('/regist/view');
     });
-
 });
 module.exports = router;

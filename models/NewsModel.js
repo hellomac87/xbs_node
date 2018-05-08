@@ -5,7 +5,7 @@ const autoIncrement = require('mongoose-auto-increment');
 let NewsSchema = new Schema({
     title : String,
     thumbnail : String, //이미지 파일명
-    link : String,
+    a_link : String,
     description : String,
     created_at : {
         type : Date,

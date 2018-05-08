@@ -14,28 +14,24 @@
 <body>
 <div class="container">
     <div class="col-md-12">
-        <h1 style="margin-top: 100px;">News Register</h1>
-        <form style="margin-top: 50px;" action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" class="form-control" placeholder="Title" name="title" value="<%= result.title %>">
-            </div>
-            <div class="form-group">
-                <label>Link</label>
-                <input type="text" class="form-control" placeholder="Link" name="a_link" value="<%= result.a_link %>">
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" placeholder="Description" name="description"><%- result.description %></textarea>
-            </div>
-            <div class="form-group">
-                <input type="file" name="thumbnail">
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-            <a class="btn btn-secondary" href="/regist/view">Back</a>
-        </form>
-
-
+        <h1 style="margin-top: 100px;">News View</h1>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" value="<%= result.title %>" readonly>
+        </div>
+        <div class="form-group">
+            <label>Link</label>
+            <input type="text" class="form-control" value="<%= result.a_link %>" readonly>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" value="" readonly><%= result.description %></textarea>
+        </div>
+        <div class="form-group">
+            <img src="/uploads/<%= result.thumbnail %>" alt="img" style="width:100%;">
+        </div>
+        <a class="btn btn-primary" href="/regist/update/<%= result.id %>">Update</a>
+        <a class="btn btn-secondary" href="/regist/view">Back</a>
     </div>
 </div>
 
