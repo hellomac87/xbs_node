@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/*@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);*/
+/*font-family: 'Spoqa Han Sans', sans-serif;*/
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('../font/SpoqaHanSansBold.woff2') format('woff2'),
+    url('../font/SpoqaHanSansBold.woff') format('woff'),
+    url('../font/SpoqaHanSansBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('../font/SpoqaHanSansRegular.woff2') format('woff2'),
+    url('../font/SpoqaHanSansRegular.woff') format('woff'),
+    url('../font/SpoqaHanSansRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('../font/SpoqaHanSansLight.woff2') format('woff2'),
+    url('../font/SpoqaHanSansLight.woff') format('woff'),
+    url('../font/SpoqaHanSansLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 100;
+    src: local('Spoqa Han Sans Thin'),
+    url('../font/SpoqaHanSansThin.woff2') format('woff2'),
+    url('../font/SpoqaHanSansThin.woff') format('woff'),
+    url('../font/SpoqaHanSansThin.ttf') format('truetype');
+}
+/*******************************************************/
+/*공통사용 CSS*/
+/*******************************************************/
+.sr-only{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+/*****************************************************/
+/*GLOBAL NAVIGATION*/
+/*****************************************************/
+div#header{
+    z-index: 5;
+}
+nav#top-nav{
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    /*background: #fbfbfb;*/
+    transition: all;
+    transition-duration: 0.5s;
+    box-sizing: border-box;
+    height: 75px;
+}
+
+.top-nav-wrap{
+    width:1140px;
+    height: 100%;
+    margin:0 auto;
+    /*overflow: hidden;*/
+    box-sizing: border-box;
+    /*z-index: 100;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.top-nav-wrap ul li{
+    list-style: none;
+}
+.top-nav-logo{
+    width:135px;
+    height: 75px;
+}
+.top-nav-logo a{
+    width:100%;
+    height: 100%;
+    display: block;
+    background: url('../img/xbs_08.png') no-repeat center center;
+    background-size: 100%;
+}
+.scroll .top-nav-logo a{
+    background: url('../img/xbs_07.png') no-repeat center center;
+    background-size: 100%;
+}
+
+ul.nav-left{
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+
+ul.nav-left li{
+    /*width:18%;*/
+    float:left;
+    text-align: center;
+}
+
+ul.nav-left li a{
+    display: block;
+    color:#ffffff;
+    font-family: 'Spoqa Han Sans', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 75px;
+    padding-right: 35px;
+    /*z-index: 999;*/
+    /*text-align: left;*/
+}
+ul.nav-left li#business-main-menu{
+    position: relative;
+}
+ul.nav-left li:last-child a{
+    padding-right: 0;
+}
+ul#business-sub-menu{
+    position: absolute;
+    top: 100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+    display: none;
+}
+ul#business-sub-menu li{
+    list-style: none;
+}
+ul#business-sub-menu li a{
+    width:65px;
+    display: block;
+    padding: 0 0 15px 0;
+    line-height: 24px;
+    text-align: left;
+    color:#ffffff;
+}
+/*li#business-main-menu:hover ul#business-sub-menu{*/
+    /*display: block;*/
+/*}*/
+
+
+/*gnb 스크롤링 css*/
+nav#top-nav.scroll{
+    background: #fbfbfb;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    top:0;
+    transition: all;
+    transition-duration: 0.5s;
+}
+nav#top-nav.scroll .top-nav-logo-img{
+    content:url('../img/xbs_07.png');
+}
+nav#top-nav.scroll ul li a{
+    color:#000000;
+}
+nav#top-nav.scroll #business-sub-menu li  a{
+    color:#000000;
+}
+
+#top-cont{
+    width:50%;
+    position: absolute;
+    top:35%;
+    left:25%;
+    z-index: 10;
+}
+#top-cont img{
+    width:100%;
+}
+
+.hamburger{
+    display: none;
+    padding:0;
+}
+.mob_menu_active{
+    color:#0196f5 !important;
+}
+
+@media (max-width:1024px){
+    .top-nav-wrap{
+        width:100%;
+        padding: 0 15px;
+        background: #fbfbfb;
+    }
+    .top-nav-logo a{
+        background: url('../img/xbs_07.png') no-repeat center center;
+        background-size: 100%;
+    }
+    ul.nav-left{
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background: #ffffff;
+        height: auto;
+        display: none;
+    }
+    ul.nav-left li{
+        width:100%;
+        height: 50px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    ul.nav-left li a{
+        color:#000000;
+        padding: 0;
+        line-height: 1;
+    }
+    .hamburger{
+        display: block;
+
+    }
+}
+@media (max-width:414px){
+    nav#top-nav{
+        height: 60px;
+    }
+    .top-nav-logo{
+        width: 100px;
+    }
+    .hamburger-box{
+        width: 35px;
+        height: 18px;
+    }
+    .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before{
+        width: 35px;
+        height: 3px;
+    }
+    ul.nav-left {
+        position: absolute;
+        top: 60px;
+    }
+}
+
+/*****************************************************/
+/*GLOBAL FOOTER*/
+/*****************************************************/
+footer{
+    width:100%;
+    background: #222425;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Spoqa Han Sans', sans-serif;
+    font-size: 0.8em;
+    color:#ffffff;
+}
+footer *{
+    margin: 0;
+    padding: 0;
+}
+.footer_wrap{
+    width:1140px;
+    height: 170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 1.2em;
+}
+.footer_wrap ul li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+.footer_wrap ul li .labels{
+    display: inline-block;
+    width:90px;
+}
+.footer_wrap ul li .def a{
+    color:#ffffff;
+}
+@media (max-width: 1024px){
+    .footer_wrap {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+@media (max-width: 768px){
+    .footer_wrap {
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+        flex-direction: column;
+        font-size: 0.9em;
+    }
+    .footer_wrap .left{
+        margin-bottom: 30px;
+    }
+    .footer_wrap ul li{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .footer_wrap ul li .labels{
+        width:100%;
+        margin-bottom: 5px;
+        opacity: 0.3;
+    }
+}
+
+.slide_ready{
+    margin-top: 120px !important;
+    opacity: 0;
+}

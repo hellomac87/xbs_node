@@ -1,0 +1,1029 @@
+@charset "utf-8";
+
+/* ***** nomalize.css ***** */
+button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}/*# sourceMappingURL=normalize.min.css.map */
+
+/* ***** common.css ***** */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+/*font-family: 'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+/*font-family: 'Noto Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+/*font-family: 'Open Sans', sans-serif;*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+/*font-family: 'Noto Sans KR', sans-serif;*/
+
+@font-face {
+	font-family: 'NanumSquareL',sans-serif;
+	src: url(../font/NanumSquareL.woff);
+	src: url(../font/NanumSquareL.eot?#iefix) format('embedded-opentype'),
+	url(../font/NanumSquareL.woff) format('woff'),
+	url(../font/NanumSquareL.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Spoqa Han Sans', sans-serif;
+	src: url(../font/NanumSquareR.woff);
+	src: url(../font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+	url(../font/NanumSquareR.woff) format('woff'),
+	url(../font/NanumSquareR.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareB';
+	src: url(../font/NanumSquareB.woff);
+	src: url(../font/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+	url(../font/NanumSquareB.woff) format('woff'),
+	url(../font/NanumSquareB.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareEB';
+	src: url(../font/NanumSquareEB.woff);
+	src: url(../font/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+	url(../font/NanumSquareEB.woff) format('woff'),
+	url(../font/NanumSquareEB.ttf) format('truetype');
+}
+
+/* ***** 공통사용 CSS ***** */
+.sr-only{
+	display: none;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	width:100%;
+}
+section{
+	width:100%;
+	font-family: 'Spoqa Han Sans', sans-serif;
+}
+section article{
+	width: 860px;
+	margin: 0 auto;
+}
+section article .rc_title{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+/****** 상세페이지 공통 ******/
+section article .list_wrap{
+	width:100%;
+	margin-bottom: 45px;
+}
+section article .list_wrap h3.list_title{
+	margin: 0 0 20px 0;
+	padding: 0;
+	font-size: 1em;
+}
+section article .list_wrap ul.list_item{
+	width:100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+section article .list_wrap ul.list_item li{
+	list-style:none;
+	font-size: 1em;
+	margin-bottom: 15px;
+}
+section article .list_wrap ul.list_item li span.strong{
+	font-weight: bold;
+}
+section article .list_wrap ul.list_item li span.middot{
+
+}
+/******* header *******/
+header{
+	width:100%;
+	position: fixed;
+	z-index: 10;
+}
+header .inner{
+	width:100%;
+	height: 74px;
+	position: relative;
+	transition: background-color;
+	transition-duration: 0.5s;
+}
+header .inner.scroll{
+	background: rgba(0,0,0,.5);
+	transition: background-color;
+	transition-duration: 0.5s;
+}
+header .inner .logo{
+	position: absolute;
+	top:14px;
+	left:30px;
+}
+header .inner .logo a{
+	width: 140px;
+	display: inline-block;
+}
+header .inner .logo a img{
+	width:100%;
+}
+header .inner .navigation{
+	position: absolute;
+	top:28px;
+	right:26px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+header .inner .navigation li{
+	float:left;
+	margin-right: 40px;
+}
+header .inner .navigation li:last-child{
+	margin-right: 0;
+	position: relative;
+}
+header .inner .navigation li:last-child ul{
+	position: absolute;
+	top:calc(100% + 15px);
+	left:0;
+	right:0;
+	margin: 0;
+	padding: 0;
+	width:80px;
+	box-sizing: border-box;
+	list-style: none;
+	display: none;
+}
+header .inner .navigation li:last-child ul li{
+	width:100%;
+	margin: 0 0 5px 0;
+	padding: 0;
+	text-align: left;
+}
+header .inner .navigation li:last-child ul li a{
+	color:#c3c0bd;
+}
+header .inner .navigation li:last-child ul li a:hover{
+	color:#ffffff;
+}
+header .inner .navigation li a{
+	display: block;
+	color:#c3c0bd;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.7em;
+	font-weight: 800;
+}
+header .inner .navigation li a:hover{
+	color:#ffffff;
+	transition: color;
+	transition-duration: 0.5s;
+}
+.hamberger{
+	display: none;
+}
+/****** section.banner ******/
+section.banner{
+	position: relative;
+	height: 674px;
+	background: black url(../img/resume_banner.png)no-repeat center top;
+	background-attachment: fixed;
+	/*background: transparent;*/
+	/*background-size:100%;*/
+	display: table;
+}
+
+section.banner .heading_wrap{
+	/*position: absolute;*/
+	/*top:290px;*/
+	/*left:0;*/
+	/*right:0;*/
+	display: table-cell;
+	color:#ffffff;
+	vertical-align: middle;
+	text-align: center;
+}
+section.banner .heading_wrap h1{
+	margin: 40px 0 10px 0;
+	font-size: 3.5em;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
+	-webkit-text-stroke: 2px white;
+}
+section.banner .heading_wrap h2{
+	margin: 0;
+	color:#ffffff;
+	font-size: 1.8em;
+	font-weight: lighter;
+	margin-bottom: 35px;
+	font-family: 'Spoqa Han Sans', sans-serif;
+}
+section.banner .heading_wrap a{
+	display: block;
+	margin: 0 auto;
+	padding: 15px 0;
+	width:248px;
+	color:#ffffff;
+	border:1px solid #ffffff;
+	border-radius: 10px;
+	font-family: 'Spoqa Han Sans', sans-serif;
+	font-size: 1.1em;
+}
+
+/****** section.how_we_work ******/
+section.how_we_work{
+	overflow: hidden;
+	padding-bottom: 160px;
+}
+section.how_we_work .rc_title{
+	margin-top: 60px;
+	margin-bottom: 130px;
+}
+
+section.how_we_work .slogan_box{
+	float:left;
+	width:calc(50% - 80px);
+	border-bottom:2px solid black;
+	box-sizing: border-box;
+	margin-right: 80px;
+	transition: all;
+	transition-duration: 0.5s;
+	opacity: 1;
+}
+section.how_we_work .slogan_box.slogan_box01{
+	margin-bottom: 75px;
+	opacity: 0;
+}
+section.how_we_work .slogan_box.slogan_box02{
+	float:right;
+	margin-top: 230px;
+	margin-right: 0;
+	margin-left: 80px;
+}
+section.how_we_work .slogan_box.slogan_box03{
+
+}
+section.how_we_work .slogan_box.ready{
+	opacity: 0;
+	transition: all;
+	transition-duration: 0.5s;
+}
+section.how_we_work .slogan_box.slogan_box01.ready{
+	margin-top:5%;
+}
+section.how_we_work .slogan_box.slogan_box02.ready{
+	margin-top: 270px;
+}
+section.how_we_work .slogan_box.slogan_box03.ready{
+	margin-top:5%;
+}
+section.how_we_work .slogan_box h2{
+	font-size: 4em;
+	margin: 0 0 35px 0;
+	font-weight: normal;
+}
+section.how_we_work .slogan_box p{
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 70px;
+}
+
+/****** section.benefits ******/
+section.benefits{
+	background: #f5f5f5 url(../img/career_bg_bot03.png)no-repeat center center;
+	background-attachment: fixed;
+	padding-bottom: 60px;
+}
+section.benefits .rc_title{
+	padding-top: 55px;
+	margin-bottom: 80px;
+}
+
+section.benefits .benefit_wrap{
+	width:100%;
+	overflow: hidden;
+}
+section.benefits .benefit_wrap .head{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 0;
+}
+.slide_wrap.swiper-wrapper{
+	display: block;
+	/*display: -webkit-box;*/
+	/*display: -webkit-flex;*/
+	/*display: -ms-flexbox;*/
+	/*display: flex;*/
+}
+section.benefits .benefit_wrap ul.benefit_list{
+	width:100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	list-style: none;
+	margin: 0 0 30px 0;
+	padding: 0;
+}
+
+section.benefits .benefit_wrap ul.benefit_list li{
+	float:left;
+	width:50%;
+	margin: 20px 0 0 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+section.benefits .benefit_wrap ul.benefit_list li:nth-child(2n){
+	padding-left:50px ;
+}
+section.benefits .benefit_wrap ul.benefit_list li .label{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+section.benefits .benefit_wrap ul.benefit_list li .desc{
+
+}
+
+/****** section.job_opening ******/
+section.job_opening{
+	padding-bottom: 100px;
+}
+section.job_opening .rc_title{
+	margin: 80px 0 60px 0;
+}
+section.job_opening .job_class{
+
+}
+section.job_opening .job_class h3{
+	font-size: 1em;
+}
+section.job_opening .job_class ul{
+	list-style: none;
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+section.job_opening .job_class ul li{
+	float:left;
+	width:48%;
+	margin:0;
+	margin-right: 2%;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border:1px solid #d3d3d3;
+	border-radius: 10px;
+	background: #ffffff url(../img/resume_arrow.png)no-repeat 98% center;
+	cursor:pointer;
+	font-size: 0.9em;
+}
+section.job_opening .job_class ul li:nth-child(2n){
+	margin-right: 0;
+	margin-left: 2%;
+}
+section.job_opening .job_class ul li a{
+	display: block;
+	color:#000000;
+	padding: 15px;
+}
+section.job_opening .job_class ul li span.read{
+	display: inline-block;
+	float:right;
+	margin-right: 10px;
+}
+section.job_opening .job_class ul li:hover{
+	transition: all;
+	transition-duration: 0.5s;
+	border:1px solid #00a0e9;
+	color:#00a0e9;
+}
+section.job_opening .job_class ul li:hover a{
+	transition: all;
+	transition-duration: 0.5s;
+	color:#00a0e9;
+}
+
+/****** section.job_opening ******/
+section.process{
+	padding-top: 60px;
+	padding-bottom: 100px;
+	background: #f5f5f5;
+}
+section.process article{
+	text-align: center;
+}
+section.process .rc_title{
+	margin-bottom: 70px;
+}
+section.process .img_wrap{
+	width:860px;
+	height: 195px;
+	margin: 0 auto;
+	text-align: center;
+	background: url(../img/resume_process.png) no-repeat center center;
+}
+/****** section.head_bar ******/
+section.head_bar{
+	height: 48px;
+	line-height: 48px;
+	font-family: 'Spoqa Han Sans', sans-serif;
+	background: #f5f5f5;
+}
+section.head_bar article a {
+	color:#000000;
+	font-size: 0.9em;
+	padding-left: 24px;
+	box-sizing: border-box;
+	background: url(../img/resume_back.png)no-repeat left center;
+}
+
+/****** section_recruit ******/
+section.section_recruit article h1{
+	width:100%;
+	margin:0 auto 36px auto;
+	padding: 36px 0;
+	font-family: 'NanumSquareEB',sans-serif;
+	font-weight: bold;
+	font-size: 2.8em;
+	color:#00a0e9;
+	border-bottom: 2px solid #000000;
+	box-sizing: border-box;
+}
+section.section_recruit article .class_wrap{
+	width:100%;
+	overflow: hidden;
+	font-family: 'NanumSquareEB',sans-serif;
+	font-weight: bold;
+	margin-bottom: 36px;
+}
+section.section_recruit article .class_wrap h2{
+	float:left;
+	margin: 0;
+	padding: 0 65px 0 0;
+	font-size: 1.7em;
+}
+section.section_recruit article .class_wrap .career{
+	display: inline-block;
+	height: 33px;
+	line-height: 33px;
+	font-size: 1.1em;
+	padding-right: 40px;
+	margin: 0 25px 0 25px;
+	background: url(../img/resume_01.png) no-repeat right center;
+}
+section.section_recruit article .class_wrap .full_time{
+	display: inline-block;
+	height: 33px;
+	line-height: 33px;
+	font-size: 1.1em;
+	padding-right: 40px;
+	margin: 0 25px 0 0;
+	background: url(../img/resume_02.png) no-repeat right center;
+}
+/****** section.info ******/
+
+section.info{
+	width:100%;
+	padding: 30px 0 30px 0;
+	box-sizing: border-box;
+	background: #f5f5f5;
+}
+section.info article .list_wrap{
+	margin-bottom: 30px;
+}
+section.info article .list_wrap h3.list_title{
+	font-size: 0.9em;
+}
+section.info article .list_wrap ul.list_item{
+	font-size: 0.8em;
+}
+section.info a.email{
+	display: block;
+	font-family: 'NanumSquareEB',sans-serif;
+	font-weight: bold;
+	color: #00a0e9;
+	margin-bottom: 40px;
+}
+
+/****** section.resume_form ******/
+section.resume_form{
+	width:100%;
+	padding: 65px 0 100px 0;
+	box-sizing: border-box;
+	display: none;
+}
+.resume_send{
+	width:100%;
+	margin-bottom: 35px;
+}
+.resume_send .input_list{
+	width:100%;
+	margin-bottom: 20px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.resume_send .input_list label{
+	display: block;
+	margin-bottom: 7px;
+	font-size: 1.1em;
+	font-family: 'NanumSquareEB',sans-serif;
+	font-weight: bold;
+}
+.resume_send .input_list label span.star{
+	color:#00a0e9;
+}
+.resume_send .input_list input{
+	width:100%;
+	box-sizing: border-box;
+	font-size: 1.1em;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	padding: 10px;
+}
+.resume_send .input_list.file{
+	position: relative;
+	overflow: hidden;
+	padding-top: 20px;
+}
+.resume_send .input_list.file .file_btn_dummy{
+	width:310px;
+	border:1px solid #00a0e9;
+	background: #00a0e9;
+	color:#ffffff;
+	text-align: center;
+	padding: 10px 0;
+	box-sizing: border-box;
+	font-size: 1em;
+	border-radius: 5px;
+	font-family: 'Spoqa Han Sans', sans-serif;
+	cursor: pointer;
+	float:left;
+	margin-right: 30px;
+}
+.resume_send .input_list.file input[type=file] {
+	position: absolute;
+	top:0;
+	left:0;
+	width:310px;
+	border:1px solid #00a0e9;
+	background: #00a0e9;
+	/*opacity: 0;*/
+	font-family: 'Spoqa Han Sans', sans-serif;
+	cursor: pointer;
+	opacity: 0;
+}
+.resume_send .input_list.file .float_item{
+	width:400px;
+	float:left;
+	display: inline-block;
+	margin: 2px 0;
+	font-size: 0.9em;
+}
+.resume_send .input_list.file .float_item.gray{
+	color:#979797;
+}
+.resume_send .input_list.file .float_item.blue{
+	color:#00a0e9;
+	font-family: 'Spoqa Han Sans', sans-serif;
+}
+
+.terms_wrap{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.terms_wrap li{
+	margin-bottom: 35px;
+}
+.terms_wrap li .terms_title{
+	width:100%;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.terms_wrap li .terms_title .title{
+	display: inline-block;
+	float:left;
+	font-size: 0.85em;
+	color:#747474;
+	font-family: 'Spoqa Han Sans', sans-serif;
+}
+.terms_wrap li .terms_title .check_box{
+	display: inline-block;
+	float:right;
+}
+.terms_wrap li .terms_title .check_box input[type='checkbox']{
+	width:0;
+	height: 0;
+	opacity: 0;
+}
+.terms_wrap li .terms_title .check_box label{
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding-right: 30px;
+	background: url(../img/resume_nocheck.png) no-repeat right center;
+	font-family: 'Spoqa Han Sans', sans-serif;
+	color:#747474;
+	font-size: 0.7em;
+}
+.terms_wrap li .terms_title .check_box input[type='checkbox']:checked +label{
+	background: url(../img/resume_check.png) no-repeat right center;
+	color:#00a0e9;
+}
+.terms_wrap li .desc_box{
+	width:100%;
+	border:1px solid #d2d2d2;
+	border-radius: 5px;
+	box-sizing: border-box;
+	height: 83px;
+	overflow: auto;
+	padding: 12px 65px 12px 12px;
+	font-size: 0.85em;
+	color:#979797;
+}
+.terms_wrap li .desc_box p{
+	text-align: justify;
+}
+.terms_wrap li .desc_box p .tit{
+	display: block;
+	margin-bottom: 5px;
+}
+.submit_btn{
+	width:100%;
+	margin-top: 70px;
+	padding: 24px 0;
+	color:#ffffff;
+	text-align: center;
+	background: #00a0e9;
+	box-sizing: border-box;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+/******* footer *******/
+.footer{
+	width:100%;
+	height: 80px;
+	background: #616161;
+	position: relative;
+}
+.footer .footer_logo{
+	position: absolute;
+	top:24px;
+	left:42px;
+}
+.footer .footer_logo img{
+	width:120px;
+}
+.footer .adress{
+	position: absolute;
+	top:28px;
+	right:42px;
+	color:#ffffff;
+	opacity: 0.3;
+	text-align: right;
+	font-size: 0.8em;
+}
+.footer .adress span.strong{
+	font-weight: bold;
+}
+/*FOR SPECIAL QUERY SECT*/
+@media (min-width:1025px) and (max-width:1600px){
+
+}
+
+/*ipad에서 ipad pro까지*/
+@media (max-width:1024px) {
+	/**** common ****/
+	section article {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 2%;
+		box-sizing: border-box;
+	}
+	section.benefits article.swiper-container{
+		padding: 0 2%;
+	}
+	section.benefits .benefit_wrap{
+		padding-left: 70px;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li:nth-child(2n){
+		padding-left: 0;
+	}
+}
+@media (max-width:768px){
+	/**** how_we_work ****/
+	section.how_we_work .slogan_box {
+		width: calc(50% - 30px);
+		margin-right: 30px;
+	}
+	section.how_we_work .slogan_box.slogan_box02 {
+		margin-left: 30px;
+	}
+
+	/**** benefits ****/
+	section.benefits{
+		background: #f5f5f5 url(../img/resume_bg_ipad.png	) no-repeat center center;
+		background-size: cover;
+	}
+	section.benefits .benefit_wrap{
+		padding-left: 0;
+	}
+	.slide_wrap.swiper-wrapper{
+		padding-left: 15px;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li{
+		padding-right: 2%;
+		box-sizing: border-box;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li:nth-child(2n){
+		padding-right: 0;
+		padding-left: 2%;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li .desc {
+		font-size: 0.9em;
+	}
+	/**** process ****/
+	section.process .img_wrap {
+		width: 100%;
+		margin: 0 auto;
+		height: 195px;
+		text-align: center;
+		background: url(../img/resume_process.png) no-repeat center center;
+		background-size: 100%;
+	}
+	/**** footer ****/
+	.footer{
+		height: 160px;
+	}
+
+	.footer .footer_logo{
+		top: 37px;
+		left: 33px;
+	}
+	.footer .footer_logo img{
+		width: 110px;
+	}
+	.footer .adress{
+		top: 85px;
+		left: 33px;
+		text-align: left;
+	}
+}
+@media (max-width:414px){
+	/**** header ****/
+	header .inner{
+		height: 60px;
+		background: rgba(0,0,0,.7);
+	}
+	header .inner.scroll{
+		background: rgba(0,0,0,.7);
+	}
+	header .inner .logo{
+		top:12px;
+		left:4%;
+	}
+	header .inner .logo a img{
+		width:120px;
+	}
+	header .inner .navigation{
+		width:100%;
+		top:100%;
+		left:0;
+		background: rgba(0,0,0,.7);
+		display: none;
+	}
+	header .inner .navigation>li{
+		width:100%;
+		margin-right: 0;
+		padding: 15px 20px;
+		box-sizing: border-box;
+	}
+	header .inner .navigation>li a{
+		font-size: 0.9em;
+	}
+	header .inner .navigation li:last-child ul{
+		width:100%;
+		top:100%;
+		left:0;
+		right: 0;
+		background: rgba(0,0,0,.7);
+		padding: 0;
+	}
+	header .inner .navigation li:last-child ul li{
+		width:100%;
+		padding: 5px 20px;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+	}
+	header .inner .navigation li:last-child ul li a{
+		color:#c3c0bd;
+		text-align: left;
+		font-size: 0.8em;
+	}
+	.hamberger{
+		position: absolute;
+		top:6px;
+		right:3%;
+		overflow: hidden;
+		display: block;
+	}
+	.mobile-menu-btn {
+		/*float:right;*/
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		height: 40px;
+		outline: 0;
+		position: relative;
+		width: 40px;
+		color:#ffffff;
+	}
+	.mobile-menu-btn span {
+		left: 10px;
+		top: 24px;
+	}
+	.mobile-menu-btn span::before {
+		top: -8px;
+	}
+	.mobile-menu-btn span::after {
+		bottom: -8px;
+	}
+	.mobile-menu-btn span::before, .mobile-menu-btn span::after {
+		content: '';
+	}
+	.mobile-menu-btn span,
+	.mobile-menu-btn span::before,
+	.mobile-menu-btn span::after {
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		display: block;
+		height: 2px;
+		position: absolute;
+		width: 25px;
+		color:#ffffff;
+		background: #ffffff;
+	}
+	.mobile-menu-btn.active span {
+		background-color: transparent;
+	}
+	.mobile-menu-btn.active span::before, .mobile-menu-btn.active span::after {
+		background-color: #ffffff;
+		top: 0;
+	}
+	.mobile-menu-btn.active span::before {
+		transform: rotate(45deg);
+	}
+	.mobile-menu-btn.active span::after {
+		transform: rotate(-45deg);
+	}
+	section article{
+		padding: 0 4%;
+	}
+	section.banner{
+		height: 100vh;
+		/*background: black url(../img/resume_banner.png)no-repeat center top;*/
+		/*background-attachment: fixed;*/
+		/*background-size: cover;*/
+	}
+	section.banner .heading_wrap h2{
+		font-size: 1.6em;
+	}
+	section.banner .heading_wrap a{
+		font-size: 1.3em;
+	}
+
+	/**** how_we_work ****/
+	section.how_we_work{
+		padding-bottom: 40px;
+	}
+	section.how_we_work .rc_title{
+		margin: 50px auto;
+	}
+	section.how_we_work .slogan_box.slogan_box01{
+		width:100%;
+		margin: 0 auto 50px auto;
+	}
+	section.how_we_work .slogan_box.slogan_box02{
+		width:100%;
+		margin: 0 auto 50px auto;
+	}
+	section.how_we_work .slogan_box.slogan_box03{
+		width:100%;
+		margin: 0 auto 50px auto;
+	}
+	section.how_we_work .slogan_box p{
+		font-size: 1em;
+	}
+	/**** benefits ****/
+	section.benefits{
+		background: #f5f5f5 url(../img/career_bg_bot03_m.png) no-repeat center center;
+		background-size: cover;
+	}
+
+	section.benefits .rc_title {
+		padding-top: 50px;
+		margin-bottom: 50px;
+	}
+	section.benefits .benefit_wrap{
+		padding: 2%;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li .desc{
+		font-size: 0.95em;
+	}
+	.slide_wrap.swiper-wrapper{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li{
+		width:100%;
+	}
+	section.benefits .benefit_wrap ul.benefit_list li:nth-child(2n){
+		padding-left: 0;
+	}
+
+	/**** job_opening ****/
+	section.job_opening .rc_title{
+		margin: 50px auto;
+	}
+	section.job_opening .job_class ul li{
+		width:100%;
+		margin:0 0 10px 0;
+	}
+	section.job_opening .job_class ul li:nth-child(2n){
+		margin:0 0 10px 0;
+	}
+
+	/**** process ****/
+	section.process .img_wrap{
+		width:375px;
+		height: 375px;
+		background: url(../img/resume_process_m.png) no-repeat center center;
+		background-size: 100%;
+	}
+
+	/****** 상세페이지 ******/
+	/**** section_recruit ****/
+	section.section_recruit article .class_wrap h2{
+		width:100%;
+		margin:0 0 30px 0;
+	}
+	section.section_recruit article .class_wrap .career{
+		margin-left: 0;
+	}
+	section.section_recruit article .class_wrap .full_time{
+
+	}
+	.resume_send .input_list.file input[type=file]{
+		width:100%;
+		top:16px;
+	}
+	.resume_send .input_list.file .float_item.gray{
+		margin-top: 20px;
+	}
+
+	/**** resume_send ****/
+	.resume_send .input_list.file .file_btn_dummy{
+		width:100%;
+	}
+
+	/**** footer ****/
+	.footer .footer_logo {
+		top: 24px;
+		left:4%;
+	}
+	.footer .adress {
+		top: 70px;
+		left: 4%;
+		line-height: 1.5;
+	}
+}
+@media (max-width:375px){
+	/**** process ****/
+	section.process .img_wrap{
+		width:350px;
+		height: 350px;
+		background: url(../img/resume_process_m.png) no-repeat center center;
+		background-size: 100%;
+	}
+
+    /*BENEFITS*/
+
+    .slide_wrap.swiper-wrapper {
+        padding-left: 0px;
+    }
+}
+@media (max-width:320px){
+	/**** process ****/
+	section.process .img_wrap{
+		width:300px;
+		height: 300px;
+		background: url(../img/resume_process_m.png) no-repeat center center;
+		background-size: 100%;
+	}
+}
