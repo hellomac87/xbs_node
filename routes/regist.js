@@ -19,7 +19,9 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage : storage });
 
-
+router.get('/', (req, res) => {
+    res.redirect('/regist/view');
+});
 router.get('/view', (req, res) => {
     NewsModel.find(function(err, results){
         res.render('regist', {results : results});
@@ -37,7 +39,14 @@ router.post('/form', upload.single('thumbnail'), (req, res) => {
         description : req.body.description
     });
     News.save(function(err){
-        res.send(News);
+        res.redirect('/regist/view');
+    });
+
+});
+
+router.get('/delete/:id',(req, res) =>{
+    NewsModel.remove({ id : req.params.id },function(err){
+        res.redirect('/regist/view');
     });
 
 });

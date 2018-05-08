@@ -17,6 +17,7 @@ db.once('open', function(){
 const connect = mongoose.connect('mongodb://127.0.0.1:27017/newsTest',{useMongoClient : true});
 autoIncrement.initialize(connect);
 
+const index = require('./routes/index');
 const admin = require('./routes/admin');
 const regist = require('./routes/regist');
 
@@ -29,18 +30,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.use('/static', express.static('static'));
+app.use('/uploads', express.static('uploads'));
 
+app.use('/', index);
 app.use('/xbs_admin', admin);
 app.use('/regist', regist);
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-
-app.get('/regist', (req, res) => {
-    res.render('regist');
-});
 
 app.get('/recruit', (req, res) => {
    res.render('recruit');

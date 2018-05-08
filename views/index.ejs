@@ -91,7 +91,7 @@
         </h3>
 
         <div class="about_us_img">
-            <img src="img/company_img01.png" alt="어바웃어스이미지">
+            <img src="static/img/company_img01.png" alt="어바웃어스이미지">
         </div>
         <div class="about_us_des">
             (주)엑스블록시스템즈는 블록체인과 보안인증 분야의 전문기업으로,
@@ -280,7 +280,7 @@
             </div>
         </div>
         <div class="left">
-            <img src="img/mockup.png" alt="mockup.png">
+            <img src="static/img/mockup.png" alt="mockup.png">
         </div>
     </article>
 </section>
@@ -292,445 +292,24 @@
             News
         </h3>
         <div class="news_box_wrap">
-
+            <% results.forEach(function(result){ %>
             <div class="news_box">
                 <div class="news_box_img">
-                    <img src="news/20180417_news.png" alt="">
+                    <img src="/uploads/<%= result.thumbnail %>" alt="newsimg">
                 </div>
                 <div class="news_box_cont">
                     <h5 class="news_tit">
-                        엑스블록시스템즈, 미술업계 블록체인 도입 위해 ‘아트앤에셋’과 협약 체결
+                        <%= result.title %>
                     </h5>
                     <p class="news_box_cont_des">
-                        블록체인 플랫폼 전문기업 엑스블록시스템즈(구 써트온)는 미술전문기업인 아트앤에셋과 블록체인을 활용한 신규 사업모델 구축과 연구를 위해 업무협약(MOU)을 체결했다고 밝혔다.
+                        <%= result.description %>
                     </p>
-                    <a href="http://www.newstown.co.kr/news/articleView.html?idxno=322189" class="news_box_cont_link" target="_blank">
+                    <a href="<%= result.link %>" class="news_box_cont_link" target="_blank">
                         Read More >
                     </a>
                 </div>
             </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180415_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        맛집 추천부터 보험금 청구까지…블록체인 일상으로 온다
-                    </h5>
-                    <p class="news_box_cont_des">
-                        정보 제공하면 가상화폐 지급…본인인증 간소화.
-                        실생활 결제에도 도입…"데이터 처리 속도 올리고 서비스 안정화해야"
-                    </p>
-                    <a href="http://www.yonhapnews.co.kr/bulletin/2018/04/14/0200000000AKR20180414032100017.HTML?input=1195m" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180412_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        써트온, ‘엑스블록시스템즈’로 사명 변경… 엑스체인 기반 블록체인 사업 강화 총력
-                    </h5>
-                    <p class="news_box_cont_des">
-                        블록체인기반 전자문서인증플랫폼 애스톤(Aston)프로젝트를 이끌고 있는 써트온은 엑스체인(X-Chain) 기반 블록체인 사업을 강화하기 위해 최근 엑스블록시스템즈(Xblocksystems)로 사명을 변경했다고 12일 밝혔다.
-                    </p>
-                    <a href="http://www.cctvnews.co.kr/news/articleView.html?idxno=82006" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180402_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        이통사, 블록체인 사업 본격화…시장 주도권 확보 나섰다
-                    </h5>
-                    <p class="news_box_cont_des">
-                        이동통신사들이 미래 기술인 블록체인 관련 사업에 박차를 가하고 있습니다.
-                    </p>
-                    <a href="http://news.mtn.co.kr/newscenter/news_viewer.mtn?gidx=2018040215531180332" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180329_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        김승기 써트온 대표 “ICO는 스타트업이 세계로 진출할 수 있는 수단”
-                    </h5>
-                    <p class="news_box_cont_des">
-                        국내 스타트업들에게 있어 ICO는 초기 시장 경쟁력을 빠르게 확보할 수 있는 가장 유용한 수단이 될 수 있다.
-                    </p>
-                    <a href="http://it.chosun.com/news/article.html?no=2849016" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180323_2_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        [인터뷰] 김승기 써트온 대표 “전자문서 보안 전문 플랫폼 도약”
-                    </h5>
-                    <p class="news_box_cont_des">
-                        1년 전 스타트업 써트온은 블록체인 관련 사업을 시작했다. 블록체인 관련 기업들 중에선 매우 빠른 편에 속했다. 1년 새 써트온은 블록체인‧보안인증 분야 전문기업이 됐다.
-                    </p>
-                    <a href="http://www.sisajournal-e.com/biz/article/181831" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180323_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        문서 위한 다차원 블록체인 만들겠다
-                    </h5>
-                    <p class="news_box_cont_des">
-                        문서에 초점을 맞췄다. 문서에 최적화하다 보니 ‘다차원 블록체인’을 만들고 있다.
-                    </p>
-                    <a href="http://www.bloter.net/archives/305153" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180123_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">블록체인 전문 Xblocksystems, 일본 신규가상화폐 ‘BaaSid’프로젝트 참여</h5>
-                    <p class="news_box_cont_des">
-                        국내 블록체인 전문기업인 Xblocksystems이 자사의 ‘다차원 블록체인 엑스체인(X-Chain)’의 개인인증을 강화하기 위해 일본 보안 전문기업인 ‘피알오(PRO)’가 주도적으로 준비하는 새로운 탈중앙화 인증기반의 가상화폐 프로젝트인 'BaaSid'에 참여하기로 했다고 5일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201802051027005526" class="news_box_cont_link" target="_blank">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170205_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">Xblocksystems, 케이사인, 체인파트너스...블록체인 기반 사업 진행 중인 국내 기업 3곳</h5>
-                    <p class="news_box_cont_des">
-                        과기정통부가 가상화폐 논란과 별개로 블록체인 기술을 발전시켜 나가야 한다는 게 과기정통부의 입장이라며 올해 블록체인 정부 지원 예산을 대폭 확대해 ‘블록체인 산업 활성화의 원년’으로 삼을 것이라고 밝혔다. 이러한 가운데, 기술 동향에 빠른 벤처와 스타트업 업체들이 블록체인 기반 사업들을 속속 선보이고 있다. 블록체인 업체들은 의료제증명 사업, IoT 보안, 오프라인 결제사업 등 블록체인을 기반으로 한 사업들을 공개했다.
-                    </p>
-                    <a href="http://www.ciokorea.com/news/37037" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180103_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">포스링크, 신규 암호화폐 애스톤 10억개 코인 공모 ‘완판’…기관 요구 추가 발행 검토</h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사 블록체인기업 Xblocksystems이 개발 총괄을 맡은 신규 암호화폐 코인 ‘애스톤’이 공모 세일 기간 완판됐다.
-                    </p>
-                    <a href="http://www.etoday.co.kr/news/section/newsview.php?idxno=1580832" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20180102_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">Xblocksystems, 암호화폐거래소 ‘코인링크’ 보안 강화</h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사인 블록체인 전문기업 Xblocksystems은 암호화폐거래소 ‘코인링크(CoinLink)’ 서비스의 고도화된 보안체계는 최근 정부가 제시한 암호화폐거래소의 보안규정에 최적화된 시스템을 구축, 가장 안정한 거래소를 운영하고 있다고 2일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201801021008069429" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171230_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">기업 및 기간 투자에 성공한 애스톤(ASTON) ICO, 크라우드 세일도 유치 중</h5>
-                    <p class="news_box_cont_des">
-                        “블록체인 전문기업으로 애스톤 프로젝트를 대리하고 있는 ㈜Xblocksystems은 2017년 대미를 장식할 애스톤(ASTON) 플랫폼의 크라우드 세일을 성공적으로 유치하고 있다고 밝혔다.
-                    </p>
-                    <a href="http://www.munhwanews.com/news/articleView.html?idxno=99212" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171228_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">Xblocksystems, 암호화폐거래소 ‘코인링크’의 보안 차별화로 승부 건다</h5>
-                    <p class="news_box_cont_des">
-                        “뚫리는 암호화폐거래소는 자격 없다!!”
-                    </p>
-                    <a href="http://www.cctvnews.co.kr/news/articleView.html?idxno=76523" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171226_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">블록체인 문서인증 플랫폼 ‘애스톤’, 100억원대 투자 유치</h5>
-                    <p class="news_box_cont_des">
-                        Xblocksystems은 엑스비씨테크놀로지에서 추진하고 있는 블록체인 기반의 문서인증 플랫폼 ‘애스톤’이 투자조합으로부터 100억원대 투자에 성공했다고 12월26일 밝혔다.
-                    </p>
-                    <a href="http://www.bloter.net/archives/298839" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171219_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">Xblocksystems, LG유플러스와 의료제증명 서비스 시범사업 추진</h5>
-                    <p class="news_box_cont_des">
-                        Xblocksystems이 의료제증명 서비스 시범사업을 위해 LG유플러스와 PoC(Proof of concept) 추진 계약을 체결했다고 19일 밝혔다
-                    </p>
-                    <a href="http://it.chosun.com/news/article.html?no=2844225" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171214_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">블록체인 전문 Xblocksystems, 글로스퍼와 합작법인 ‘디어랩’ 통해 해외시장 공략</h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사인 블록체인 전문기업 Xblocksystems은 실증 암호화 화폐인 하이콘프로젝트(Hycon Infinity)를 진행중인 글로스퍼와 특수목적법인(SPC) 디어랩(dear LaB: Linked AT Blockchain)을 통해 해외시장 공략에 적극 나선다고 14일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201712140943224068" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171211_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">코인링크, 내년 1월 가상화폐 NEM 신규 상장 계약체결</h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사인 Xblocksystems이 NEM재단(NEM.io Foundation Ltd)과 코인링크에 NEM을 신규 상장하고, 공동마케팅 및 이벤트를 추진하기로 계약을 체결했다고 11일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201712111311559053" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171207_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        포스링크 자회사 Xblocksystems, 日 이어 러시아 암호화폐거래소 시장 진출
-                    </h5>
-                    <p class="news_box_cont_des">
-                        포스링크의 자회사 Xblocksystems이 일본에 이어 러시아 암호화폐거래소 시장에 본격 진출한다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201712070900253907" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171127_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        Xblocksystems, 블록체인기반 ‘애스톤(Aston) 플랫폼’ 해외 공략 본격화
-                    </h5>
-                    <p class="news_box_cont_des">
-                        블록체인 전문기업 Xblocksystems은 동남아시아의 메디컬산업에서 큰 영향력이 있는 이보랩스(Evvolabs)와 싱가포르에서 '애스톤(Aston) 플랫폼'을 기반으로 한 의료제증명 서비스 적용 MOU를 체결하고 해외 진출을 본격화한다고 27일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201711270924265201" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171031_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        코인링크, 시총 상위 2개 가상화폐 코인 국내 독점 상장
-                    </h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사 Xblocksystems은 11월 중에 그랜드오픈을 발표하고, 현재 시가총액기준 상위 20위 이상인 2개 이상의 코인을 국내 독점상장, 재단과 함께 국내 밋업(Meet-up)행사 및 에어드롭(AirDrop) 등 공동마케팅을 준비하고 있다고 10월31일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201710311412132375" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20171019_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        포스링크 자회사 Xblocksystems, 글로벌게임사 플레이키 ICO 코인 독점 상장
-                    </h5>
-                    <p class="news_box_cont_des">
-                        포스링크 자회사인 블록체인플랫폼 전문기업 ㈜Xblocksystems은 러시아에 본사를 둔 클라우드 게이밍 플랫폼 글로벌 기업인 ‘플레이키(Playkey)’와 19일 기술 및 사업협력을 위한 업무 협약을 체결했다고 19일 밝혔다
-                    </p>
-                    <a href="http://www.fnnews.com/news/201710191335036881" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170831_news.png" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        Xblocksystems, 다차원구조의 블록체인 플랫폼 상용화 적극 나선다
-                    </h5>
-                    <p class="news_box_cont_des">
-                        블록체인 전문기업 Xblocksystems(대표 김승기, 박경옥)은 기존 블록체인 기술을 응용해 전자문서와 같은 디지털컨텐츠와 모바일 환경에 최적화된 다차원블록체인 ‘X-Chain’의 해외특허출원 준비를 마치고, 다양한 분야에 적용할 수 있도록 시범사업을 추진하고 있다고 8월31일 발표했다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201708310941227261" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170817_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        Xblocksystems, SK인포섹과 가상화폐거래소 ‘코인링크’ 보안시스템 구축
-                    </h5>
-                    <p class="news_box_cont_des">
-                        포스링크(대표 조준영) 자회사인 블록체인 전문기업 Xblocksystems(대표 김승기)은 SK인포섹(대표 안희철)과 가상화폐거래소 ‘코인링크(CoinLink)’의 보안시스템 및 정보보안체계 구축을 위한 전략적 업무제휴 계약을 체결했다고 17일 밝혔다.
-                    </p>
-                    <a href="http://www.ddaily.co.kr/news/article.html?no=159243" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170807_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        한국블록체인산업진흥협회 공식 출범
-                    </h5>
-                    <p class="news_box_cont_des">
-                        한국블록체인산업진흥협회는 지난 4일 이비스 스타일 앰베서더 강남 2층에서 창립총회를 개최하고 공식 출범했다고 7일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201708071000048485" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170713_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        국산 ‘가상화폐거래소’ , 글로벌 시장 공략하나
-                    </h5>
-                    <p class="news_box_cont_des">
-                        세계적으로 가상화폐의 인기가 치솟으면서 가상화폐거래소를 통한 새로운 사업들이 활발하게 추진되고 있다.가상화폐거래소는 비트코인 등과 같은 가상화폐를 사고 팔 수 있는 시스템으로 한 달에 수 천억에서 수 조원에 이르는금융거래가 일어나고 있다. 현재 국내에서는 빗썸, 코인원, 코빗이 서비스 중에 있는데 코스닥상장사 최초로 포스링크가 이 시장에 진출한다.
-                    </p>
-                    <a href="http://m.nextdaily.co.kr/news/article.html?id=20170712800038" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170621_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        포스링크, ‘동국대 블록체인연구센터’와 산학협력 연구개발 협약
-                    </h5>
-                    <p class="news_box_cont_des">
-                        포스링크는 동국대학교 블록체인연구센터와 '차세대 블록체인 플랫폼 공동연구개발'을 위한 업무협약을 체결하고, 차세대블록체인 플랫폼의 공동구축과 기술사업화에 산학협력을 강화하기로 했다고 21일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201706210907009109" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
-
-            <div class="news_box">
-                <div class="news_box_img">
-                    <img src="news/20170614_news.jpg" alt="">
-                </div>
-                <div class="news_box_cont">
-                    <h5 class="news_tit">
-                        포스링크, 블록체인 전문업체 ‘Xblocksystems’ 인수
-                    </h5>
-                    <p class="news_box_cont_des">
-                        코스닥 상장업체 포스링크는 ICT에 기반을 둔 제4차 산업혁명에 대비해 미래가치를 창출할 수 있는 새로운 사업기회를 발굴하기 위해 블록체인 플랫폼 및 생체인증(FIDO)기반 보안인증 업체 ‘Xblocksystems’의 지분 100%를 인수하고 신규사업 진출 계획을 14일 밝혔다.
-                    </p>
-                    <a href="http://www.fnnews.com/news/201706141000400048" target="_blank" class="news_box_cont_link">
-                        Read More >
-                    </a>
-                </div>
-            </div>
+            <% }) %>
 
         </div>
         <div class="more_btn">
@@ -752,7 +331,7 @@
 			</span>
         </p>
         <div class="link">
-            <a href="recruit/recruit.html" target="_blank">채용부문 바로가기 <span class="arrow"> > </span></a>
+            <a href="/recruit" target="_blank">채용부문 바로가기 <span class="arrow"> > </span></a>
         </div>
     </article>
 </section>
