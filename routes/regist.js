@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     destination : function(req, file, callback){ //이미지가 저장되는 도착지 지정
         callback(null, uploadDir);
     },
-    filename : function(req, file, callback){ // product-날짜.jpg(png) 형식으로 저장
+    filename : function(req, file, callback){ // news-날짜.jpg(png) 형식으로 저장
         callback(null, 'news-' + Date.now() + '.' + file.mimetype.split('/')[1]);
     }
 });
@@ -66,7 +66,7 @@ router.post('/update/:id', upload.single('thumbnail'),(req, res) => {
             fs.unlinkSync(uploadDir + '/' + result.thumbnail);
         }
 
-        var query = {
+        let query = {
             title : req.body.title,
             thumbnail : (req.file) ? req.file.filename : result.thumbnail,
             a_link : req.body.a_link,

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 //mongodb connect
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;  //mongoose promise error 처리
+//mongoose.Promise = global.Promise;  //mongoose promise error 처리
 const autoIncrement = require('mongoose-auto-increment');
 
 const db = mongoose.connection;
