@@ -9,7 +9,15 @@ router.get('/', (req, res) => {
     res.render('login');
 });
 router.post('/', (req, res) => {
-    res.render('login');
+    UserModel.findOne({
+        username:req.body.username,
+        password:passwordHash(req.body.password)
+    }, function(err, user){
+        if(!user){
+            res.send('there is no user');
+        }
+        res.send(user);
+    });
 });
 
 // sign up router
