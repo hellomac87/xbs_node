@@ -34,7 +34,7 @@
             <tbody>
             <% results.forEach(function(result){ %>
             <tr>
-                <th scope="row"><%= result.id %></th>
+                <th scope="row" class="row_id"><%= result.id %></th>
                 <td><a href="/regist/view/<%= result.id %>"><%= result.title %></a></td>
                 <td><%= result.description %></td>
                 <td>
@@ -42,7 +42,7 @@
                     <%= result.getDate.month %> .
                     <%= result.getDate.day %>
                 </td>
-                <td><a class="btn btn-outline-danger" href="/regist/delete/<%= result.id %>" role="button">Delete</a></td>
+                <td><a class="btn btn-outline-danger btn-delete" href="/regist/delete/<%= result.id %>" role="button">Delete</a></td>
             </tr>
             <% }) %>
             </tbody>

@@ -63,19 +63,20 @@
     </style>
 </head>
 <body class="text-center">
-<form class="form-signin">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputId" class="sr-only">Email address</label>
+<form class="form-signin" action="" method="post">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+
     <input type="text" name="username" id="inputId" class="form-control" placeholder="ID" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Password</label>
+
     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+    <input type="text" name="displayName" id="displayName" class="form-control" placeholder="displayName" required="" autofocus="">
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <a class="btn btn-lg btn-secondary btn-block" href="/xbs_admin/signup">Sign Up</a>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
 </form>
 
 <!-- Optional JavaScript -->
