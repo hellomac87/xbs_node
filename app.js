@@ -11,6 +11,31 @@ const flash = require('connect-flash');
 // passport login
 const passport = require('passport');
 const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+const store = new MongoDBStore({
+        uri: 'mongodb://127.0.0.1:27017/newsTest',
+        databaseName: 'newsTest',
+        collection: 'newsTestSession'
+});
+
+// Catch errors
+store.on('error', function(error) {
+    assert.ifError(error);
+    assert.ok(false);
+});
+
+// session setting (passport?)
+app.use(session({
+        secret: 'do you know kimchi',
+        resave: true,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 2 //지속시간 2시간
+        },
+        store:store
+    })
+);
 
 //mongodb connect
 const mongoose = require('mongoose');
@@ -36,16 +61,7 @@ app.set('view engine', 'ejs');
 app.use('/static', express.static('static'));
 app.use('/uploads', express.static('uploads'));
 
-// session setting (passport?)
-app.use(session({
-        secret: 'do you know kimchi',
-        resave: false,
-        saveUninitialized: true,
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 2 //지속시간 2시간
-        }
-    })
-);
+
 
 //passport 적용
 app.use(passport.initialize());
