@@ -28,7 +28,7 @@ store.on('error', function(error) {
 // session setting (passport?)
 app.use(session({
         secret: 'do you know kimchi',
-        resave: true,
+        resave: false,
         saveUninitialized: true,
         cookie: {
             maxAge: 1000 * 60 * 60 * 2 //지속시간 2시간
