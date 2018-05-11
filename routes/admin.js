@@ -3,6 +3,7 @@ const router = express.Router();
 const passwordHash = require('../libs/passwordHash');
 const UserModel = require('../models/UserModel');
 
+
 // passport
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -49,8 +50,9 @@ router.post('/', passport.authenticate('local',{
         failureFlash:true //실패시 플래시 메세지
     }),
     (req, res) => {
-        res.send(req.user);
-});
+        res.redirect('/regist/view');
+    }
+);
 
 // sign up router
 router.get('/signup', (req, res) => {
@@ -67,6 +69,11 @@ router.post('/signup', (req, res) =>{
     User.save(function(err){
         res.redirect('/xbs_admin');
     });
+});
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/xbs_admin');
 });
 
 module.exports = router;

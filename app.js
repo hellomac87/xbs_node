@@ -38,11 +38,11 @@ app.use('/uploads', express.static('uploads'));
 
 // session setting (passport?)
 app.use(session({
-        secret: 'fastcampus',
+        secret: 'do you know kimchi',
         resave: false,
         saveUninitialized: true,
         cookie: {
-            maxAge: 2000 * 60 * 60 //지속시간 2시간
+            maxAge: 1000 * 60 * 60 * 2 //지속시간 2시간
         }
     })
 );
@@ -53,9 +53,6 @@ app.use(passport.session());
 
 //플래시 메시지 관련
 app.use(flash());
-
-
-
 
 const index = require('./routes/index');
 const admin = require('./routes/admin');

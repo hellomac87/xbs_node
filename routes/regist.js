@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const NewsModel = require('../models/NewsModel');
+const loginRequired = require('../libs/loginRequired');
 
 // 이미지 저장 위치 설정
 const path = require('path');
@@ -22,7 +23,7 @@ const upload = multer({ storage : storage });
 router.get('/', (req, res) => {
     res.redirect('/regist/view');
 });
-router.get('/view', (req, res) => {
+router.get('/view', loginRequired,(req, res) => {
     NewsModel.find(function(err, results){
         res.render('regist', {results : results});
     });
